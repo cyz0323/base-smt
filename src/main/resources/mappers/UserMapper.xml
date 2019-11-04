@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yz.supermarket.mapper.UserMapper">
+
+    <select id="find" parameterType="int" resultType="com.yz.supermarket.entity.User">
+        SELECT * FROM base_user_tbl where user_id = #{id}
+    </select>
+</mapper>
