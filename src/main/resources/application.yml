@@ -1,2 +1,7 @@
 server:
-  port: 8001
+  port: 8001 #访问端口
+  connection-timeout: 120000 #超时时间
+
+spring:
+  resources:
+    static-locations: classpath:/META-INF/resources/,classpath:/static/,classpath:/templates/
