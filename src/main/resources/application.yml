@@ -5,3 +5,4 @@ server:
 spring:
   resources:
     static-locations: classpath:/META-INF/resources/,classpath:/static/,classpath:/templates/
+  
