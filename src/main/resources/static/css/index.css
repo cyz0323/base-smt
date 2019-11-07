@@ -1,0 +1,106 @@
+/* tag 标签切换区域 start */
+.tag-bar{
+	width: calc(100% - 65px); 
+	height: 25px;
+	line-height: 25px;
+	margin: 1px 1px;
+	border: 1px solid #eee;
+	padding-right: 60px;
+	position: relative;
+	z-index: 100;
+}
+.tag-bar-item{
+	height: 25px; 
+	line-height: 25px;
+	display: inline-block;
+	border-radius: 5px;
+	color: #333;
+	background: #ccc;
+	margin-right: 5px;
+	float: left;	
+}
+.tag-bar-itemd{
+	color: #fff;
+	background: #0086AA;
+}
+.tag-bar-item:hover{color: #333;}
+.tag-bar-itemd:hover{color: #fff;}
+.tag-bar-item .tag-bar-text{
+	text-indent: 5px;
+	min-width: 60px;
+	max-width: 100px;
+	overflow: hidden;
+	display: inline-block;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+.tag-bar-item .tag-bar-btn{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	font-size: 18px;
+	line-height: 20px;
+	text-align: center;
+	position: relative;
+	top: -6px;
+	right: 3px;
+	cursor: pointer;
+}
+.tag-bar-item .tag-bar-btn:hover{
+	background: red;
+	border-radius: 50%;
+	color: #fff;
+}
+.close-btn{
+	height: 25px;
+	width: 55px;
+	line-height: 25px;
+	background:#ffa;
+	display: block;
+	position: absolute;
+	z-index: 110;
+	top: 0px;
+	right: 0px;
+	background: #5BC0DE;
+	text-align: center;
+	color: #fff;
+}
+.close-btn:hover{color: #fff;}
+.close-group{
+	position: absolute;
+	top: 27px;
+	right: -1px;
+	z-index: 1000;
+	background: #fff;
+	width: 70px;
+	text-align: center;
+	padding: 5px;
+	border-radius: 5px;
+	background: #e8e8e8;
+}
+.close-group>li{
+	height: 25px;
+	line-height: 25px;
+}
+.close-group>li:first-child{
+	border-bottom: 1px solid #aaa;
+}
+.close-group>li:hover{
+	background: #00B1E6;
+}
+.close-group>li>a:hover{color: #fff}
+/* tag 标签切换区域 end */
+
+/* 主体内容区域样式定义 start */
+.main-content{
+	width: calc(100% - 200px);
+	height: 100%;
+	overflow: hidden;
+	border: 1px solid #aaa !important;
+}
+.main-box{
+	margin-left: 1px;
+	height: calc(100% - 90px);
+	width: calc(100% - 2px);
+}
+/* 主体内容区域样式定义 end */

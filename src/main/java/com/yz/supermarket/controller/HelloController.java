@@ -8,7 +8,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.yz.supermarket.entity.User;
 import com.yz.supermarket.service.UserService;
 
-@RequestMapping(value="/api")
+/**
+* @ClassName: HelloController  
+* @Description: 测试类
+* @author yangzeng
+* @date 2019年11月6日  
+*
+ */
 @Controller
 public class HelloController {
 	
@@ -20,5 +26,10 @@ public class HelloController {
 		User user = userService.find(1);
 		mode.addAttribute("user", user);
 		return "/index";
+	}
+	
+	@RequestMapping("/demo")
+	public String demo(ModelMap mode) {
+		return "/demo";
 	}
 }

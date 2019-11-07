@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	<body>
+		<!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+		<div class="layui-side layui-bg-black" th:fragment="menu(menuEntity)">
+			<div class="layui-side-scroll">
+				<ul class="layui-nav layui-nav-tree" id="menuBox" 
+					th:each="menu,state : ${menuEntity}">
+					<li class="layui-nav-item" 
+						th:if="${menu.parentId == 0 and menu.menuType == 1}">
+						<a href="javascript: void(0)" th:text="${menu.menuName}" 
+							th:class="${menu.icon}" th:data-url="${menu.menuUrl}"
+							th:data-name="${menu.menuName}" th:data-id="${menu.id}"></a>
+						<dl class="layui-nav-child" th:each="child : ${menu.child}">
+					    	<dd><a href="javascript:;" th:text="${child.menuName}"
+					    		th:data-url="${child.menuUrl}" th:data-name="${child.menuName}"
+					    		th:data-id="${child.id}">选项1</a></dd>
+					    </dl>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

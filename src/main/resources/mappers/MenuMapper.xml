@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yz.supermarket.mapper.MenuMapper">
+	<!-- 默认列字段 -->
+	<sql id="BASE_COLUMN_KEY">
+		id,parent_id,menu_code,menu_name,menu_name_us,menu_url,menu_type,icon,sort,note,
+		create_date,create_person
+	</sql>
+	
+	<!-- 菜单列表检索 -->
+    <select id="findList" resultType="com.yz.supermarket.entity.Menu">
+        <![CDATA[ SELECT ]]>
+    	<include refid="BASE_COLUMN_KEY"/>
+		<![CDATA[	
+			FROM base_menu_tbl m
+			ORDER BY parent_id,sort
+        ]]>
+    </select>
+</mapper>
