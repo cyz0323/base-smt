@@ -15,7 +15,7 @@ $(function(){
 		let child = $(this).next()[0];
 		//控制下拉元素
 		let classDoc = $(this).parent();
-		if(child){
+		if(child){  //有子元素展开下来
 			if(classDoc.hasClass("layui-nav-itemed")){
 				classDoc.removeClass("layui-nav-itemed");
 			}else{
@@ -27,6 +27,7 @@ $(function(){
 			setIframeWindow($(this).attr("data-id"),$(this).attr("data-name"),
 					$(this).attr("data-url"));
 		}
+		
 	});
 	//顶部tag 内容切换
 	$(document).find("#tagBars>a>.tag-bar-text").on("click",function(){
@@ -69,6 +70,8 @@ $(function(){
 				closeItem(this);
 			});
 		}
+		//iframe 内容切换
+		toggleIframeContent();
 		//tag元素创建
 		function createTagItem(id, name, url){
 			let str = '';
@@ -87,6 +90,7 @@ $(function(){
 		let doc = $(e).parent();
 		doc.addClass("tag-bar-itemd");
 		doc.siblings().removeClass("tag-bar-itemd");
+		toggleIframeContent();
 	}
 	/**
 	 * 顶部tag标签关闭按钮的触发
@@ -99,6 +103,8 @@ $(function(){
 			}else if(parent.next()[0]){
 				parent.next().addClass("tag-bar-itemd");
 			}
+			//iframe 内容切换
+			toggleIframeContent();
 		}
 		parent.addClass("layui-anim-fadeout");
 		setTimeout(function(){
@@ -108,5 +114,11 @@ $(function(){
 				window.location.reload();
 			}
 		},500);
+	}
+	/**
+	 * iFrame 内容切换 */
+	function toggleIframeContent(){
+		let showTag = $("#tagBox").find('.tag-bar-itemd');
+		$("#tagIframe").attr("src",showTag.attr('data-url'));
 	}
 })
